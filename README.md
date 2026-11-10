@@ -10,3 +10,7 @@ Event site for Design Shala, an IDHA Labs initiative. The first page is the even
 ## Design
 
 Printed conference programme look: powder-blue paper backdrop (texture embedded in the CSS), heading green #006015, body green #24503b, sage top bar #CEDBCF, lime #D4EF45 on buttons only. Hanken Grotesk for headings and body, Azeret Mono for small labels.
+
+## Deploys
+
+Cloudflare Workers Builds is connected to this repo (reconnected 2026-11-10). Each push to `main` builds and deploys automatically; check the Deployments tab in Cloudflare if a change does not appear.
