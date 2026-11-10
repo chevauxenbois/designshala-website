@@ -5,7 +5,7 @@ Event site for Design Shala, an IDHA Labs initiative. The first page is the even
 - `public/` is everything that gets published. `public/index.html` is the whole site for now.
 - Hosting: Cloudflare Workers static assets (free), set up in `wrangler.jsonc`, the same way as the Office Interio site. Every change to `main` deploys automatically to https://designshala.idhalabs.in (custom domain on the idhalabs.in Cloudflare zone; the workers.dev address https://designshala-website.harshkahateprojects.workers.dev also works).
 - Register buttons have the class `form-link` and point to the Google Form https://forms.gle/hxsxakJ623B6pRJw5.
-- Content in [BRACKETS] is placeholder: session time, recording/certificate answer. Footer contact: team.idhalabs@gmail.com, Instagram @idhalabs.
+- Content in [BRACKETS] is placeholder: session time. Footer contact: team.idhalabs@gmail.com, Instagram @idhalabs.
 
 ## Design
 
