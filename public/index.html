@@ -2,6 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXCQ3CJ6R"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-CJXCQ3CJ6R');
+// Count clicks on Register buttons (links to the Google Form)
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a.form-link');
+  if(!a)return;
+  gtag('event','register_click',{link_text:a.textContent.trim(),link_url:a.href,button_position:a.closest('header')?'header':'page',transport_type:'beacon'});
+});
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Career in Design (Winter Edition): a free online session with studio founders, Sat 28 Nov 2026. By Design Shala, IDHA Labs.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>

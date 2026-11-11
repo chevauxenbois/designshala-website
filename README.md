@@ -14,3 +14,7 @@ Printed conference programme look: powder-blue paper backdrop (texture embedded 
 ## Deploys
 
 Cloudflare Workers Builds is connected to this repo (reconnected 2026-11-10). Each push to `main` builds and deploys automatically; check the Deployments tab in Cloudflare if a change does not appear.
+
+## Analytics
+
+Google Analytics 4, Measurement ID `G-CJXCQ3CJ6R` (gtag snippet at the top of `<head>` in `public/index.html`). Clicks on any `a.form-link` Register button send a `register_click` event with `button_position` (header or page). UTM parameters on incoming links (e.g. Instagram ads) are picked up automatically and show under Reports > Acquisition > Traffic acquisition.
