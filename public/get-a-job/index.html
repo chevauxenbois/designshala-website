@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXCQ3CJ6R"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-CJXCQ3CJ6R');
+// Count clicks on "Get a Job" buttons
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a.job-link');
+  if(!a)return;
+  gtag('event','get_a_job_click',{link_text:a.textContent.trim(),link_url:a.href,button_position:a.closest('header')?'header':'page',transport_type:'beacon'});
+});
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Get a Job: 1:1 career guidance from Design Shala (IDHA Labs). What studio founders told us in the Career in Design talks, turned into a plan to get you hired by the firm you want.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Get a Job · Design Shala</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&family=Azeret+Mono:wght@400;500&display=swap">
+<style>
+/* Same printed-programme look as the Career in Design page: powder-blue paper, forest-green ink, lime only on buttons. */
+:root{
+  --paper:#a8badb; --card:rgba(240,245,252,.42); --ink:#24503b; --head:#006015; --soft:#3a5c4b; --line:rgba(36,80,59,.22); --lime:#d4ef45; --bar:rgba(206,219,207,.92);
+  --tex:url("/paper.jpg");
+  --display:"Hanken Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"Azeret Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--paper) var(--tex) center/cover fixed;color:var(--ink);font:400 17px/1.6 var(--display)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:linear-gradient(var(--bar),var(--bar)),var(--tex) center/cover fixed}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;color:var(--head);font-weight:700;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.label{font:500 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.btn{display:inline-block;font:700 16px/1 var(--display);background:var(--lime);color:#173f2e;padding:16px 24px;border-radius:999px;text-decoration:none}
+.btn:hover{filter:brightness(.96)}
+
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:linear-gradient(var(--bar),var(--bar)),var(--tex) center/cover fixed;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.brand{color:var(--head);font:800 19px/1 var(--display);text-decoration:none;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:10px}
+.brand-mark{width:auto;height:26px;flex:none}
+header nav{display:flex;gap:24px;align-items:center}
+header nav a{text-decoration:none;font:500 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink)}
+header nav a[aria-current]{color:var(--head);text-decoration:underline;text-underline-offset:6px}
+header nav .btn{font-size:14px;padding:10px 16px;color:#173f2e}
+
+/* hero */
+.hero{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(rgba(236,242,248,.55),rgba(236,242,248,.55)),var(--tex) center/cover fixed}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;image-rendering:pixelated;opacity:.9}
+.poster{position:relative;padding-block:64px 72px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:end}
+.crumb{font:500 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);grid-column:1/-1}
+.crumb a{text-underline-offset:4px}
+.poster h1{font-weight:800;text-transform:uppercase;letter-spacing:-.045em;line-height:.86;font-size:clamp(72px,13vw,190px)}
+.poster h1 span{display:block;mix-blend-mode:multiply}
+.poster h1 span:nth-child(2){padding-left:12%}
+.ask{display:flex;flex-direction:column;gap:18px;padding-bottom:8px}
+.ask .q{font:700 clamp(24px,2.6vw,32px)/1.15 var(--display);color:var(--head);letter-spacing:-.01em}
+.ask .q u{text-decoration-color:var(--lime);text-decoration-thickness:6px;text-underline-offset:2px;text-decoration-skip-ink:none}
+.ask p{color:var(--ink);max-width:40ch}
+
+/* sections */
+section.s{padding-block:72px;border-top:1px solid var(--line)}
+.sh{display:flex;flex-direction:column;gap:10px;margin-bottom:36px}
+.sh h2{font-size:clamp(32px,4.4vw,48px)}
+.sh p{color:var(--soft);max-width:56ch}
+
+/* where it comes from: talks -> framework -> 1:1 */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:f}
+.flow li{position:relative;background:var(--card);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.flow li:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);font:500 20px/1 var(--mono);color:var(--soft);z-index:1}
+.flow h3{font-size:22px;font-weight:600}
+.flow p{color:var(--soft);font-size:16px}
+.flow .paid{align-self:flex-start;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--head);color:var(--lime);padding:7px 10px;border-radius:4px}
+
+/* framework: three pillars, five outcomes */
+.fw{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px}
+.pillars{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.pillars li{display:flex;gap:14px;align-items:baseline;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:18px 20px}
+.pillars b{color:var(--head);font-size:19px;font-weight:700;line-height:1.25}
+.pillars small{display:block;color:var(--soft);font-size:14px;margin-top:4px}
+.key{flex:none;width:28px;height:28px;border-radius:50%;background:var(--head);color:var(--lime);display:inline-flex;align-items:center;justify-content:center;font:500 12px/1 var(--mono)}
+.outs{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.outs li{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+.outs .n{font:500 13px/1.6 var(--mono);color:var(--soft)}
+.outs b{color:var(--head);font-size:20px;font-weight:700;line-height:1.3}
+.outs .tags{display:flex;gap:6px}
+.outs .tags .key{width:24px;height:24px;font-size:11px;background:transparent;color:var(--head);border:1px solid var(--head)}
+
+/* who */
+.who{display:flex;flex-wrap:wrap;gap:12px}
+.who span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:12px 20px;font-weight:500}
+
+/* benefits: three steps up a stair */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:end}
+.steps li{border-top:4px solid var(--ink);padding-top:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.steps li:nth-child(2){margin-bottom:28px}
+.steps li:nth-child(3){margin-bottom:56px;border-color:var(--lime)}
+.steps b{color:var(--head);font-size:clamp(22px,2.4vw,28px);font-weight:700;line-height:1.15}
+.steps p{color:var(--soft);font-size:16px}
+
+/* faq */
+.faq{max-width:720px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-weight:600;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 20px/1 var(--mono);color:var(--soft)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 18px;color:var(--soft)}
+
+/* cta band */
+.reg{background:#1d4a33;color:#e6edf7}
+.reg .wrap{padding-block:72px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.reg h2{color:inherit;font-size:clamp(32px,4.4vw,48px)}
+.reg p{opacity:.8;margin-top:8px}
+.reg .btn{font-size:18px;padding:18px 30px}
+
+footer{padding-block:32px;font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px}
+
+@media (max-width:820px){
+  .poster{grid-template-columns:minmax(0,1fr);gap:28px}
+  .flow,.steps{grid-template-columns:minmax(0,1fr)}
+  .flow li:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}
+  .steps li:nth-child(n){margin-bottom:0}
+  .fw{grid-template-columns:minmax(0,1fr);gap:28px}
+}
+@media (max-width:620px){
+  header nav a:not(.btn){display:none}
+  .poster{padding-block:40px 48px}
+  section.s{padding-block:56px}
+  .outs li{grid-template-columns:32px minmax(0,1fr)}
+  .outs .tags{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 239.4 251.0" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M9.4 0.2L8.8 1.4L8.8 35.7L9.7 36.8L176.2 37.0L182.4 39.0L185.2 40.6L188.6 43.4L191.5 47.2L193.6 51.2L195.0 57.6L194.7 62.9L193.9 65.9L192.5 68.8L190.2 71.8L187.1 74.4L184.6 75.9L180.3 77.5L176.8 78.4L80.4 91.6L73.6 92.2L64.1 93.8L52.3 97.1L41.2 101.7L31.8 107.3L24.1 113.4L17.1 120.5L13.5 125.1L9.5 131.2L6.1 138.1L3.1 146.4L1.2 154.0L0.0 165.0L0.0 173.0L1.1 182.8L2.3 188.5L4.6 196.2L7.0 202.3L11.2 210.3L16.6 218.3L21.1 223.7L29.3 231.5L35.5 236.2L40.1 239.1L46.1 242.4L51.2 244.6L63.1 248.5L73.9 250.5L81.5 251.0L92.6 251.0L99.4 250.4L109.0 248.4L120.5 244.4L129.0 240.3L139.5 233.9L150.0 226.0L158.7 218.3L170.8 205.7L183.2 190.4L191.8 178.0L193.2 176.7L195.2 175.8L197.8 175.7L201.0 177.5L202.3 179.3L202.9 181.8L203.1 248.9L203.8 249.4L238.1 249.4L238.9 249.1L239.4 248.1L239.4 179.3L237.8 170.2L235.2 163.4L232.8 159.0L227.5 152.2L220.6 146.4L211.8 141.8L204.2 139.7L200.1 139.1L193.4 139.1L188.7 139.7L184.2 140.8L177.4 143.5L173.7 145.6L169.6 148.5L163.0 155.1L152.9 169.7L144.5 180.1L136.1 189.1L128.2 196.3L120.3 202.5L112.7 207.3L104.3 211.3L96.2 213.7L90.9 214.3L81.5 214.3L73.9 213.3L65.2 210.7L57.4 206.7L52.1 202.8L47.1 197.8L42.9 192.0L39.2 184.1L37.9 179.9L36.9 174.5L36.6 167.1L37.1 161.2L38.8 154.8L41.1 149.7L45.0 144.2L48.8 140.4L53.8 136.8L61.1 133.1L67.9 130.7L76.9 128.8L184.3 114.3L192.1 112.3L199.9 109.2L205.4 106.2L213.3 100.3L217.7 95.9L221.5 91.1L226.8 82.0L229.7 74.1L230.9 68.3L231.6 61.4L231.1 51.3L228.7 40.6L225.8 33.4L223.5 29.2L220.6 24.7L216.9 20.0L208.8 12.4L200.3 6.9L190.7 2.8L183.6 1.0L176.8 0.1Z"/></svg><span>Design Shala</span></a>
+    <nav aria-label="Site">
+      <a href="/">Career in Design</a>
+      <a href="#framework">Framework</a>
+      <a href="#who">Who</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn job-link" href="mailto:team.idhalabs@gmail.com?subject=Get%20a%20Job%20consultation">Get a Job</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="arcs" aria-hidden="true"></canvas>
+  <div class="wrap poster">
+    <p class="crumb"><a href="/">Career in Design</a> / Get a Job</p>
+    <h1 aria-label="Get a Job"><span>Get a</span><span>Job</span></h1>
+    <div class="ask">
+      <p class="q">How are you able to do it? <u>Understand how to be valuable.</u></p>
+      <p>1:1 career guidance built on what studio founders tell us in the Design Shala talks, so you can apply to the firm you want and get in.</p>
+      <div><a class="btn job-link" href="mailto:team.idhalabs@gmail.com?subject=Get%20a%20Job%20consultation">Get a Job</a></div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="s" id="how">
+    <div class="wrap">
+      <div class="sh"><div class="label">Where it comes from</div><h2>From the talks to your application</h2></div>
+      <ol class="flow">
+        <li><span class="label">01 · Free</span><h3>Studio founders talk</h3><p>In the Career in Design series, founders share how they hire and what makes them say no.</p></li>
+        <li><span class="label">02</span><h3>We turn it into a framework</h3><p>Their answers become five checkpoints every application has to pass.</p></li>
+        <li><span class="label">03</span><h3>You get 1:1 guidance</h3><p>We take you through the checkpoints for the particular firm you want to join.</p><span class="paid">Paid consultation</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="s" id="framework">
+    <div class="wrap">
+      <div class="sh"><div class="label">Career guidance</div><h2>Three pillars, five things you'll get right</h2></div>
+      <div class="fw">
+        <ul class="pillars">
+          <li><span class="key">A</span><span><b>Portfolio building</b><small>Graphics and AI tools</small></span></li>
+          <li><span class="key">B</span><span><b>Communication</b><small>Emails, calls and interviews</small></span></li>
+          <li><span class="key">C</span><span><b>Studio owner insight</b><small>What founders told us they look for</small></span></li>
+        </ul>
+        <ol class="outs">
+          <li><span class="n">01</span><b>Build a portfolio that gets noticed</b><span class="tags" aria-label="Pillars A and C"><span class="key">A</span><span class="key">C</span></span></li>
+          <li><span class="n">02</span><b>Communicate well while applying for internships</b><span class="tags" aria-label="Pillar B"><span class="key">B</span></span></li>
+          <li><span class="n">03</span><b>Prepare for interviews</b><span class="tags" aria-label="Pillars B and C"><span class="key">B</span><span class="key">C</span></span></li>
+          <li><span class="n">04</span><b>Negotiate a salary that matches your skill</b><span class="tags" aria-label="Pillars B and C"><span class="key">B</span><span class="key">C</span></span></li>
+          <li><span class="n">05</span><b>Show your worth and avoid being rejected</b><span class="tags" aria-label="Pillar C"><span class="key">C</span></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="who">
+    <div class="wrap">
+      <div class="sh"><div class="label">Who it's for</div><h2>If you're trying to get in</h2></div>
+      <div class="who"><span>Fresh graduates, 2025 and 2026</span><span>Planning to switch into design</span><span>Struggling to find a job</span></div>
+    </div>
+  </section>
+
+  <section class="s" id="benefits">
+    <div class="wrap">
+      <div class="sh"><div class="label">What you get</div><h2>Three steps up</h2></div>
+      <ol class="steps">
+        <li><span class="label">01</span><b>Understand your weak points</b><p>An honest read of your portfolio and approach.</p></li>
+        <li><span class="label">02</span><b>Work on them</b><p>A clear list of fixes, one at a time.</p></li>
+        <li><span class="label">03</span><b>Get hired faster</b><p>Apply with a stronger case for that studio.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="s" id="faq">
+    <div class="wrap">
+      <div class="sh"><div class="label">FAQ</div><h2>Questions</h2></div>
+      <div class="faq">
+        <details><summary>Is this free like the talks?</summary><p>No. The talks are free. Get a Job is a paid 1:1 consultation.</p></details>
+        <details><summary>Do you find the job for me?</summary><p>No. We prepare you to apply, and you apply yourself.</p></details>
+        <details><summary>Can I aim for a specific studio?</summary><p>Yes. That's the point. Tell us the firm and we prepare you for it.</p></details>
+        <details><summary>What should I bring?</summary><p>Your portfolio or work samples, your CV, and the firms you want to apply to.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="reg">
+  <div class="wrap">
+    <div><h2>Ready to apply?</h2><p>Tell us the firm you want. We'll take it from there.</p></div>
+    <a class="btn job-link" href="mailto:team.idhalabs@gmail.com?subject=Get%20a%20Job%20consultation">Get a Job</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Design Shala · IDHA Labs · <a href="/">Career in Design</a></span>
+    <span><a href="mailto:team.idhalabs@gmail.com">team.idhalabs@gmail.com</a> · Instagram <a href="https://www.instagram.com/idhalabs/" target="_blank" rel="noopener">@idhalabs</a></span>
+  </div>
+</footer>
+
+<script>
+// Stepped pixel arcs behind the hero, same as the Career in Design page.
+(function(){
+  const cv=document.getElementById('arcs'); if(!cv) return;
+  const draw=()=>{
+    const r=cv.getBoundingClientRect(); if(!r.width) return;
+    const cell=Math.max(10,Math.round(r.width/110)), W=Math.ceil(r.width/cell), H=Math.ceil(r.height/cell);
+    cv.width=W; cv.height=H; const c=cv.getContext('2d'); c.clearRect(0,0,W,H); c.fillStyle='#9db2da';
+    const ring=(cx,cy,r0,r1)=>{for(let y=0;y<H;y++)for(let x=0;x<W;x++){const d=Math.hypot(x+.5-cx,y+.5-cy); if(d>=r0&&d<=r1)c.fillRect(x,y,1,1);}};
+    ring(W*.80,-H*.18,W*.30,W*.30+H*.17);
+    ring(W*.30,H*1.55,W*.40,W*.40+H*.30);
+  };
+  draw(); let t; addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(draw,150)});
+})();
+</script>
+</body>
+</html>
