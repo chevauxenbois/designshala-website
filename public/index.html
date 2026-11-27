@@ -159,16 +159,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
   .learn,.info{grid-template-columns:minmax(0,1fr)}
   .prog{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}
 }
-@media (max-width:380px){
-  header .brand{font-size:17px;gap:7px}
-  header .brand-mark{height:22px}
-  header nav .nav-job{font-size:11px;letter-spacing:.02em}
-}
 @media (max-width:620px){
-  header nav a:not(.btn):not(.nav-job){display:none}
-  header nav .nav-job{white-space:nowrap;letter-spacing:.04em}
-  header .brand{white-space:nowrap}
-  header nav{gap:14px}
+  header nav a:not(.btn){display:none}
   .poster{min-height:0;padding-block:40px 32px;display:flex;flex-direction:column;gap:14px}
   .poster h1{margin-top:8px}
   .poster h1 span:nth-child(2){padding-left:8%}
@@ -216,8 +208,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
       <a href="#learn">Learn</a>
       <a href="#info">Info</a>
       <a href="#faq">FAQ</a>
-      <a class="nav-job" href="/get-a-job/">Get a Job</a>
-      <a class="btn form-link" href="https://forms.gle/hxsxakJ623B6pRJw5" target="_blank" rel="noopener">Register</a>
+      <a class="btn" href="/get-a-job/">Get a Job</a>
     </nav>
   </div>
 </header>
